@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+
+import Header from '../components/header/Header'
+import Routes from './routes'
+import Footer from '../components/footer/Footer'
+import './defaut.css'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.props.test}
+        <Header />
+        <Routes />
+        <Footer />
       </div>
     )
   }
 }
 
-const mapStateToProps = state => ({test : state.test.value})
-export default connect(mapStateToProps)(App)
+export default App
