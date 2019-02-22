@@ -16,3 +16,8 @@ body{
     flex-flow: column;
     justify-content: space-between;
 }
+
+img{
+    max-width: 100%;
+    display: block;
+}
