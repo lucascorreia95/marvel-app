@@ -27,6 +27,11 @@
     letter-spacing: 2px;
     display: block;
     padding: 5px 0;
+    transition: all .3s;
+}
+
+.footer__column a:hover{
+    transform: translateY(-3px)
 }
 
 .footer__column span{

@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux'
 
+import SearchForm from '../components/search/SearchReducer'
+
 export default combineReducers({
-  test: () => ({ value:"Teste Redux"})
+  searchForm: SearchForm
 })
