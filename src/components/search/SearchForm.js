@@ -1,21 +1,27 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from "react-router-dom"
+
+import './Search.css'
 
 import { handleInputChange, handleSubmit } from './SearchActions'
 
-import ironman from '../../assets/img/iron-man.png'
-
 class SearchForm extends Component {
     render() {
+        const inputPlaceholder = `enter the name of your ${this.props.route} ...`
         return (
             <div className="search__wrapper">
-                <img src={ironman} alt="GoTwitter" />
-                <form onSubmit={this.props.handleSubmit}>
+                <Link to="/" className="search__go-back">go back</Link>
+                <h2 className="search__title">We are looking for {this.props.route}</h2>
+                <figure className="search__figure">
+                    <img src={this.props.img} alt={this.props.route} />
+                </figure>
+                <form className="search__form" onSubmit={this.props.handleSubmit}>
                     <input
                         value={this.props.inputValue}
                         onChange={this.props.handleInputChange}
-                        placeholder={this.props.placeholder}
+                        placeholder={inputPlaceholder}
                     />
                     <button type="submit">Search</button>
                 </form>
@@ -24,6 +30,10 @@ class SearchForm extends Component {
     }
 }
 
-const mapStateToProps = state => ({inputValue: state.searchForm.inputValue})
+const mapStateToProps = state => ({
+    inputValue: state.searchForm.inputValue,
+    route: state.searchForm.route,
+    img: state.searchForm.img
+})
 const mapDispatchToProps = dispatch => bindActionCreators({handleInputChange, handleSubmit}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm)
