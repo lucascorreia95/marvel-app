@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 import './Search.css'
 
-import { handleInputChange, handleSubmit } from './SearchActions'
+import { handleInputChange } from './SearchActions'
 
 class SearchForm extends Component {
     render() {
@@ -17,13 +17,15 @@ class SearchForm extends Component {
                 <figure className="search__figure">
                     <img src={this.props.img} alt={this.props.route} />
                 </figure>
-                <form className="search__form" onSubmit={this.props.handleSubmit}>
+                <form className="search__form">
                     <input
                         value={this.props.inputValue}
                         onChange={this.props.handleInputChange}
                         placeholder={inputPlaceholder}
                     />
-                    <button type="submit">Search</button>
+                    <Link to="/result">
+                        Search
+                    </Link>
                 </form>
             </div>
         )
@@ -35,5 +37,5 @@ const mapStateToProps = state => ({
     route: state.searchForm.route,
     img: state.searchForm.img
 })
-const mapDispatchToProps = dispatch => bindActionCreators({handleInputChange, handleSubmit}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({handleInputChange}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm)
