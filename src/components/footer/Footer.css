@@ -54,3 +54,22 @@
     text-decoration: none;
     letter-spacing: 2px;
 }
+
+@media(max-width: 520px){
+    .footer{
+        padding-top: 30px;
+    }
+
+    .footer__column{
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+
+    .footer__column a{
+        text-align: center;
+    }
+    
+    .footer__column span{
+        text-align: center;
+    }
+}

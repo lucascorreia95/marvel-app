@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ResultItem from './ResultItem'
+import { connect } from 'react-redux'
 
 import { Link } from "react-router-dom"
 
@@ -8,12 +9,28 @@ class ResultList extends Component {
     return (
       <div className="result__wrapper">
         <Link to="/search" className="result__go-back">go back</Link>
+        <div className="result__header">
+          <span>result for "{this.props.keyWord}"</span>
+        </div>
         <ul className="result__list">
-          <ResultItem />
+          { this.props.result.results &&
+              this.props.result.results.map( item => (
+                <ResultItem
+                  key={item.id}
+                  name={item.name}
+                  thumbnail={item.thumbnail}
+                />
+              ))
+          }
         </ul>
       </div>
     )
   }
 }
 
-export default ResultList
+const mapStateToProps = state => ({
+  result: state.result.result,
+  keyWord: state.searchForm.inputValue
+})
+
+export default connect(mapStateToProps)(ResultList)
