@@ -2,16 +2,15 @@ import React, { Component } from 'react'
 
 import { Link } from "react-router-dom"
 
-import seriescover from '../../assets/img/iron-man.png'
-
 class ResultList extends Component {
   render() {
+    const thumbnail = `${this.props.thumbnail.path}/portrait_medium.${this.props.thumbnail.extension}`
     return (
       <li className="result__item">
         <Link to="/" className="result__item-link">
             <figure className="result__item-image">
               <img
-                src={seriescover}
+                src={thumbnail}
                 alt={this.props.name}
               />
             </figure>
