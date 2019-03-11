@@ -14,6 +14,7 @@ class ListItens extends Component {
               className="home__list-link"
               onClick={() => this.props.chooseCategory({
                 route: this.props.title,
+                params: this.props.params,
                 img:this.props.image
               })}
             >

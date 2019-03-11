@@ -19,6 +19,7 @@ class ResultList extends Component {
                 <ResultItem
                   key={item.id}
                   name={item.name}
+                  title={item.title}
                   thumbnail={item.thumbnail}
                 />
               ))

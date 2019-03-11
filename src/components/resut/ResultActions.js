@@ -1,9 +1,13 @@
 import Api from '../../services/Api'
 
-export const getResults = async (route, value) => {
+export const getResults = async (route, value, params) => {
     
-    const response = await Api.get(`${route}`,{
-        params: {nameStartsWith: value}
+    const response = await Api.get('',{
+        params: {
+            params: params,
+            value: value,
+            route: route
+        }
     })
 
     return{

@@ -7,7 +7,7 @@ class ResultList extends Component {
     const thumbnail = `${this.props.thumbnail.path}/portrait_medium.${this.props.thumbnail.extension}`
     return (
       <li className="result__item">
-        <Link to="/" className="result__item-link">
+        <Link to="/single" className="result__item-link">
             <figure className="result__item-image">
               <img
                 src={thumbnail}
@@ -15,7 +15,10 @@ class ResultList extends Component {
               />
             </figure>
             <div className="result__item-name">
-              <span>{this.props.name}</span>
+              <span>
+                {this.props.name}
+                {this.props.title}
+              </span>
             </div>
         </Link>
       </li>
