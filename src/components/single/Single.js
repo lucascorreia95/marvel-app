@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 
+import SingleContent from './SingleContent'
+
 class Single extends Component {
   render() {
     return (
-      <div className="single"></div>
+      <div className="single">
+        <SingleContent />
+      </div>
     )
   }
 }

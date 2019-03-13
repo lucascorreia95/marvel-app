@@ -8,7 +8,7 @@ import './Result.css'
 
 class Result extends Component {
 
-  async componentDidMount(){
+  componentDidMount(){
     this.props.getResults(this.props.route, this.props.inputValue, this.props.params)
   }
 

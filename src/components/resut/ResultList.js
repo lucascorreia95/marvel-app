@@ -6,7 +6,6 @@ import { Link } from "react-router-dom"
 
 class ResultList extends Component {
   render() {
-    console.log(this.props.result)
     return (
       <div className="result__wrapper">
         <Link to="/search" className="result__go-back">go back</Link>
@@ -18,6 +17,7 @@ class ResultList extends Component {
               this.props.result.results.map( item => (
                 <ResultItem
                   key={item.id}
+                  id={item.id}
                   name={item.name}
                   title={item.title}
                   thumbnail={item.thumbnail}
