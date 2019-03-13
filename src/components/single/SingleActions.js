@@ -13,10 +13,10 @@ export const getSingle = async (route, id) => {
         }
     })
 
-    console.log(response)
+    console.log(response.data)
 
     return{
-        type: "test",
-        payload: response
+        type: "SINGLE_FETCHED",
+        payload: response.data
     }
 }
