@@ -1,11 +1,11 @@
 const INITIAL_STATE = {
-    single: {}
+    characters: {}
 }
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
-        case 'SINGLE_FETCHED':
-            return { ...state, single: action.payload }
+        case 'CHARACTERS_FETCHED':
+            return { ...state, characters: action.payload }
         default:
             return state
     }

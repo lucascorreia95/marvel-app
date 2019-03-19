@@ -1,10 +1,6 @@
 import Api from '../../services/Api'
 
-export const getSingle = async (route, id) => {
-    
-    console.log(route)
-    
-    console.log(id)
+export const getCharacters = async (route, id) => {
 
     const response = await Api.get('/single',{
         params: {
@@ -13,10 +9,8 @@ export const getSingle = async (route, id) => {
         }
     })
 
-    console.log(response.data)
-
     return{
-        type: "SINGLE_FETCHED",
+        type: "CHARACTERS_FETCHED",
         payload: response.data
     }
 }

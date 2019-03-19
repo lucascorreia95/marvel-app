@@ -16,7 +16,7 @@ export const getResults = async (route, value, params) => {
     }
 }
 
-export const chooseSingle = single => ({
-    type: 'CHOOSE_SINGLE',
-    payload: single
+export const chooseCharacters = characters => ({
+    type: 'CHOOSE_CHARACTERS',
+    payload: characters
 })
