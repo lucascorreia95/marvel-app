@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
     inputValue: '',
-    route: 'characters',
+    route: '',
     params: '',
     img: ''
 }

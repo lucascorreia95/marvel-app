@@ -8,7 +8,7 @@ class CharactersUrl extends Component {
     return (
       <div className="characters__url">
         <div className="characters__url-header">
-          some links with more informations
+          for more informations
         </div>
         <div className="characters__url-links">
           {this.props.urls.data.results[0].urls.map( link => (

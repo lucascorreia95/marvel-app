@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
     result: {},
-    characters: '1009610'
+    characters: ''
 }
 
 export default (state = INITIAL_STATE, action) => {
