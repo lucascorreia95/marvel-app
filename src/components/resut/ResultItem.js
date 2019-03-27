@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from "react-router-dom"
 
-import { chooseCharacters } from './ResultActions'
+import { chooseItem } from './ResultActions'
 
 class ResultList extends Component {
   render() {
@@ -11,9 +11,9 @@ class ResultList extends Component {
     return (
       <li className="result__item">
         <Link
-          to="/characters"
+          to={`/${this.props.route}`}
           className="result__item-link"
-          onClick={() => this.props.chooseCharacters(this.props.id)}
+          onClick={() => this.props.chooseItem(this.props.id)}
         >
             <figure className="result__item-image">
               <img
@@ -33,5 +33,5 @@ class ResultList extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({chooseCharacters}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({chooseItem}, dispatch)
 export default connect(null, mapDispatchToProps)(ResultList)

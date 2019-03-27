@@ -21,6 +21,7 @@ class ResultList extends Component {
                   name={item.name}
                   title={item.title}
                   thumbnail={item.thumbnail}
+                  route ={this.props.route}
                 />
               ))
           }
@@ -32,7 +33,8 @@ class ResultList extends Component {
 
 const mapStateToProps = state => ({
   result: state.result.result,
-  keyWord: state.searchForm.inputValue
+  keyWord: state.searchForm.inputValue,
+  route: state.searchForm.route
 })
 
 export default connect(mapStateToProps)(ResultList)

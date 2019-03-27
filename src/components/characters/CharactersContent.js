@@ -23,7 +23,7 @@ class CharactersContent extends Component {
             
             return (
                 <div className="characters__content">
-                    <Link to="/search" className="characters__go-back">go back</Link>
+                    <Link to="/result" className="characters__go-back">go back</Link>
                     
                     <CharactersHeader
                         name={this.props.characters.data.results[0].name}
@@ -49,7 +49,7 @@ class CharactersContent extends Component {
 const mapStateToProps = state => ({
     characters: state.characters.characters,
     route: state.searchForm.route,
-    id: state.result.characters
+    id: state.result.item
 })
 const mapDispatchToProps = dispatch => bindActionCreators({getCharacters}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(CharactersContent)
