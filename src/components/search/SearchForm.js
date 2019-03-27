@@ -8,6 +8,14 @@ import './Search.css'
 import { handleInputChange } from './SearchActions'
 
 class SearchForm extends Component {
+
+    handleInputKeyDown = e => {
+        if (e.keyCode === 13) {
+            console.log("teste enter")
+            this.props.history.push('/result');
+        }
+    }
+
     render() {
         const inputPlaceholder = `enter the name of your ${this.props.route} ...`
         return (
@@ -17,16 +25,17 @@ class SearchForm extends Component {
                 <figure className="search__figure">
                     <img src={this.props.img} alt={this.props.route} />
                 </figure>
-                <form className="search__form">
+                <div className="search__form">
                     <input
                         value={this.props.inputValue}
                         onChange={this.props.handleInputChange}
+                        onKeyDown={this.handleInputKeyDown}
                         placeholder={inputPlaceholder}
                     />
                     <Link to="/result">
                         Search
                     </Link>
-                </form>
+                </div>
             </div>
         )
     }

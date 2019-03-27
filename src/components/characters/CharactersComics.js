@@ -9,19 +9,26 @@ class CharactersComics extends Component {
         let comicsArray = []
 
         for (let i = 0; i < 5; i++) {
-            comicsArray[i] = this.props.charactersComics[i]
+            if (this.props.charactersComics[i]){
+                comicsArray[i] = this.props.charactersComics[i]
+            }
         }
 
         return (
             <div className="characters__comics">
-                <div className="characters__comics-header">
-                    <span>some comics</span>
-                </div>
-                <div className="characters__comics-list">
-                    {comicsArray.map( comic => (
-                        <CharactersComic key={comic.resourceURI} comic={comic} />
-                    ))}
-                </div>
+                {comicsArray[0] &&
+                    <div>
+                        <div className="characters__comics-header">
+                            <span>some comics</span>
+                        </div>
+                        <div className="characters__comics-list">
+                            {comicsArray.map( comic => (
+                                <CharactersComic key={comic.resourceURI} comic={comic} />
+                            ))}
+                        </div> 
+                    </div>
+                }
+                
             </div>
         )
     }

@@ -11,8 +11,8 @@ class CharactersUrl extends Component {
           for more informations
         </div>
         <div className="characters__url-links">
-          {this.props.urls.data.results[0].urls.map( link => (
-            <CharactersUrlLink key={link.url} link={link} />
+          {this.props.urls.data.results[0].urls.map( (link, index) => (
+            <CharactersUrlLink key={index} link={link} />
           ))}
         </div>
       </div>

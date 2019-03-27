@@ -11,7 +11,7 @@ class CharactersComic extends Component {
 
     async componentDidMount(){
 
-        const params = this.props.comic.resourceURI.split("/")
+        const params = this.props.comic.resourceURI ? this.props.comic.resourceURI.split("/") : ''
 
         const response = await Api.get('/single',{
             params: {
