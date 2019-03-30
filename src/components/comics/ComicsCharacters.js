@@ -19,7 +19,7 @@ class ComicsCharacters extends Component {
                 {charactersArray[0] &&
                     <div>
                         <div className="comics__characters-header">
-                            <span>some comics</span>
+                            <span>some characters in this comic</span>
                         </div>
                         <div className="comics__characters-list">
                             {charactersArray.map( character => (

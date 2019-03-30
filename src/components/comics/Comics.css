@@ -1,0 +1,102 @@
+.comics__go-back{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #151515!important;
+    padding: 20px;
+    font-weight: 600;
+}
+
+.comics__go-back:before{
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAulBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACrJGrzAAAAPXRSTlMAAQIDBQYJChARFB0fICIkNzo7PD4/QERFVFVYX31/gYadn6Cho6anqaqrrbC2w8jL3t/l7vDy9ff5+/z+PX5mUAAAAK9JREFUeAGt0OkOwUAQwPGhiqLug6LqUNZ9UEfN+7+WbJlkN9nMF/7fNr/sJDPwt1xWvZDVp2AVBasoWEXBKMP9GGWXtd+2zUpFsxajsn2XUdmqwCniuUo8R1NR88vWwui3Drn5/7XM+8Hm5wdAHqJMZJ1SYxDsHh++F3Wnm+d622TbMahOLKssX4ixqzlxUv2E6IPqGkN+g8eU6jqDNcGa+vRALz0dAldmBGwO/NQbg05AX+RZaDYAAAAASUVORK5CYII=");
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.comics__content{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.comics__name{
+    text-align: center;
+}
+
+.comics__img img{
+    max-width: 350px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.comics__description{
+    text-align: center;
+    padding: 15px;
+}
+
+.comics__characters-header{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 30px 0;
+}
+
+.comics__characters-list{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.comic__characters{
+    flex: 0 1 250px;
+    min-width: 0;
+    padding: 15px;
+}
+
+.comic__characters-img{
+    margin: 0;
+}
+
+.comic__characters-title{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 30px 0;
+}
+
+.comics__url-header{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 30px 0;
+}
+
+.comics__url-link a{
+    font-size: 16px;
+    line-height: 38px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 30px 0;
+    color: #000000;
+    text-decoration: none;
+}
+
+.comics__url-links{
+    margin-bottom: 50px;
+}
+
+@media(max-width: 520px){
+    .comics__url-link{
+        text-align: center;
+    }
+}

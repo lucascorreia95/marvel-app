@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import Api from '../../services/Api'
 
+import { Link } from "react-router-dom"
+
 class ComicsCharacter extends Component {
     
     state = {
@@ -30,10 +32,12 @@ class ComicsCharacter extends Component {
         const thumbnail = this.state.path ? `${this.state.path}.${this.state.extension}` : ""
         return (
             <div className="comic__characters">
-                <figure className="comic__characters-img">
-                    <img src={thumbnail} alt={this.props.character.name} ></img>
-                </figure>
-                <h2 className="comic__characters-title">{this.props.character.name}</h2>
+                <Link to="/result">
+                    <figure className="comic__characters-img">
+                        <img src={thumbnail} alt={this.props.character.name} ></img>
+                    </figure>
+                    <h2 className="comic__characters-title">{this.props.character.name}</h2>
+                </Link>
             </div>
         )
     }
