@@ -14,3 +14,8 @@ export const getCharacters = async (route, id) => {
         payload: response.data
     }
 }
+
+export const chooseComic = id => ({
+    type: 'CHOOSE_COMIC',
+    payload: id
+})

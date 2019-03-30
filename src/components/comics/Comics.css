@@ -59,6 +59,18 @@
     flex: 0 1 250px;
     min-width: 0;
     padding: 15px;
+    transition: all .3s;
+    opacity: .75;
+}
+
+.comic__characters:hover{
+    transform: translate3d(0, -25px, 0);
+    opacity: 1;
+}
+
+.comic__characters a{
+    color: black;
+    text-decoration: none;
 }
 
 .comic__characters-img{

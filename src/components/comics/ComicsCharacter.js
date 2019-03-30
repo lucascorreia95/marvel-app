@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { Link } from "react-router-dom"
 
 import Api from '../../services/Api'
 
-import { Link } from "react-router-dom"
+import { chooseCharacter } from './ComicsActions'
 
 class ComicsCharacter extends Component {
     
@@ -29,10 +32,15 @@ class ComicsCharacter extends Component {
     }
 
     render() {
+        const params = this.props.character.resourceURI ? this.props.character.resourceURI.split("/") : ''
+        const id = params[2] ? params[2] : ""
         const thumbnail = this.state.path ? `${this.state.path}.${this.state.extension}` : ""
         return (
             <div className="comic__characters">
-                <Link to="/result">
+                <Link
+                    to="/characters"
+                    onClick={() => this.props.chooseCharacter(id)}
+                >
                     <figure className="comic__characters-img">
                         <img src={thumbnail} alt={this.props.character.name} ></img>
                     </figure>
@@ -43,4 +51,5 @@ class ComicsCharacter extends Component {
     }
 }
 
-export default ComicsCharacter
+const mapDispatchToProps = dispatch => bindActionCreators({chooseCharacter}, dispatch)
+export default connect(null, mapDispatchToProps)(ComicsCharacter)
