@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import ResultItem from './ResultItem'
 import { connect } from 'react-redux'
-
+import { bindActionCreators } from 'redux'
 import { Link } from "react-router-dom"
+import { loading } from './ResultActions'
 
 class ResultList extends Component {
+  
+  componentDidMount(){
+    this.props.loading()
+  }
+
   render() {
+    console.log("render function")
     return (
       <div className="result__wrapper">
         <Link to="/search" className="result__go-back">go back</Link>
@@ -25,6 +32,11 @@ class ResultList extends Component {
                 />
               ))
           }
+          { this.props.result.total === 0 &&
+              <li className="result__list-item--empty">
+                Sorry, nothing was found =(
+              </li>
+          }
         </ul>
       </div>
     )
@@ -36,5 +48,5 @@ const mapStateToProps = state => ({
   keyWord: state.searchForm.inputValue,
   route: state.searchForm.route
 })
-
-export default connect(mapStateToProps)(ResultList)
+const mapDispatchToProps = dispatch => bindActionCreators({loading}, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(ResultList)

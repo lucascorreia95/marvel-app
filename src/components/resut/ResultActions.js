@@ -20,3 +20,10 @@ export const chooseItem = item => ({
     type: 'CHOOSE_ITEM',
     payload: item
 })
+
+export const loading = () => {
+    console.log("chamou o loading")
+    return{
+        type: 'LOADING_STATE'
+    }
+}

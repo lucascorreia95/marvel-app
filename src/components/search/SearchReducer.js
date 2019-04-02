@@ -2,7 +2,8 @@ const INITIAL_STATE = {
     inputValue: '',
     route: '',
     params: '',
-    img: ''
+    img: '',
+    loading: false
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -15,6 +16,14 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, route: "characters" }
         case 'CHOOSE_COMIC':
             return { ...state, route: "comics" }
+        case 'LOADING_STATE':
+            return { ...state, loading: true }
+        case 'CHARACTERS_FETCHED':
+            return { ...state, loading: false }
+        case 'COMICS_FETCHED':
+            return { ...state, loading: false }
+        case 'RESULT_FETCHED':
+            return { ...state, loading: false }
         default:
             return state
     }

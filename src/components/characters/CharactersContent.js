@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux'
 import { Link } from "react-router-dom"
 
 import { getCharacters } from './CharactersActions'
+import { loading } from '../resut/ResultActions'
+
 import CharactersHeader from './CharactersHeader'
 import CharactersDescription from './CharactersDescription'
 import CharactersComics from './CharactersComics'
@@ -12,6 +14,7 @@ import CharactersUrl from './CharactersUrl'
 class CharactersContent extends Component {
     
     componentDidMount(){
+        this.props.loading()
         this.props.getCharacters(this.props.route, this.props.id)
     }
 
@@ -51,5 +54,5 @@ const mapStateToProps = state => ({
     route: state.searchForm.route,
     id: state.result.item
 })
-const mapDispatchToProps = dispatch => bindActionCreators({getCharacters}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({getCharacters, loading}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(CharactersContent)
