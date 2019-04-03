@@ -22,7 +22,6 @@ export const chooseItem = item => ({
 })
 
 export const loading = () => {
-    console.log("chamou o loading")
     return{
         type: 'LOADING_STATE'
     }

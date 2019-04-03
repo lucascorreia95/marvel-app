@@ -6,13 +6,7 @@ import { Link } from "react-router-dom"
 import { loading } from './ResultActions'
 
 class ResultList extends Component {
-  
-  componentDidMount(){
-    this.props.loading()
-  }
-
   render() {
-    console.log("render function")
     return (
       <div className="result__wrapper">
         <Link to="/search" className="result__go-back">go back</Link>

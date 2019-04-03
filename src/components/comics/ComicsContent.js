@@ -10,6 +10,7 @@ import ComicsHeader from './ComicsHeader'
 import ComicsDescription from './ComicsDescription'
 import ComicsCharacters from './ComicsCharacters'
 import ComicsUrl from './ComicsUrl'
+import Loading from '../loading/Loading'
 
 class ComicsContent extends Component {
 
@@ -19,45 +20,48 @@ class ComicsContent extends Component {
     }
 
     render() {
+        
+        let thumbnail = ""
 
         if (this.props.comics.data){
-            
-            const thumbnail = `${this.props.comics.data.results[0].thumbnail.path}.${this.props.comics.data.results[0].thumbnail.extension}`
-            
-            return (
-                <div className="comics__content">
-                    <Link to="/result" className="comics__go-back">go back</Link>
-                    
-                    <ComicsHeader
-                        name={this.props.comics.data.results[0].title}
-                        thumbnail={thumbnail}
-                    />
-
-                    <ComicsDescription
-                        description={this.props.comics.data.results[0].description}
-                    />
-
-                    <ComicsCharacters />
-
-                    <ComicsUrl />
-
-                </div>
-            )
-        }else{
-            return(
-                <div className="comics__content">
-                    <Link to="/result" className="comics__go-back">go back</Link>
-                </div>
-            )
-        
+            thumbnail = `${this.props.comics.data.results[0].thumbnail.path}.${this.props.comics.data.results[0].thumbnail.extension}`
         }
+        
+        return (
+            <div className="comics__content">
+
+                { this.props.loadingState && 
+                    <Loading />
+                }
+                
+                { this.props.comics.data && !this.props.loadingState &&
+                    <div>
+                        <Link to="/search" className="comics__go-back">go back</Link>
+                        
+                        <ComicsHeader
+                            name={this.props.comics.data.results[0].title}
+                            thumbnail={thumbnail}
+                        />
+
+                        <ComicsDescription
+                            description={this.props.comics.data.results[0].description}
+                        />
+
+                        <ComicsCharacters />
+
+                        <ComicsUrl />
+                    </div>
+                }
+            </div>
+        )
     }
 }
 
 const mapStateToProps = state => ({
     comics: state.comics.comics,
     route: state.searchForm.route,
-    id: state.result.item
+    id: state.result.item,
+    loadingState: state.searchForm.loading
 })
 const mapDispatchToProps = dispatch => bindActionCreators({getComics, loading}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(ComicsContent)
