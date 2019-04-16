@@ -16,7 +16,7 @@
 }
 
 .footer__column{
-    flex: 1 1 33%;
+    flex: 0 0 auto;
 }
 
 .footer__column a{
@@ -55,7 +55,7 @@
     letter-spacing: 2px;
 }
 
-@media(max-width: 520px){
+@media(max-width: 560px){
     .footer{
         padding-top: 30px;
     }

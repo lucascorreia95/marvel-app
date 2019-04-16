@@ -39,12 +39,6 @@
     min-width: 0px;
     padding: 15px;
     transition: all .3s;
-    opacity: .75;
-}
-
-.result__item:hover{
-    transform: translate3d(0, -25px, 0);
-    opacity: 1;
 }
 
 .result__item-link{
@@ -88,4 +82,15 @@
     .result__item{
         flex: 0 1 50%;
     }
+}
+
+@media(min-width: 991px){
+    .result__item{
+        opacity: .75;
+    }
+    
+    .result__item:hover{
+        transform: translate3d(0, -25px, 0);
+        opacity: 1;
+    }    
 }
