@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 
 import './Search.css'
 
 import { handleInputChange } from './SearchActions'
 
 class SearchForm extends Component {
+
+    handleInputKeyUp = e => {
+        if (e.keyCode !== 13) return
+        this.props.history.push('/result');
+    }
+
     render() {
         const inputPlaceholder = `enter the name of your ${this.props.route} ...`
         return (
@@ -22,6 +28,7 @@ class SearchForm extends Component {
                         value={this.props.inputValue}
                         onChange={this.props.handleInputChange}
                         placeholder={inputPlaceholder}
+                        onKeyUp={this.handleInputKeyUp}
                     />
                     <Link to="/result">
                         Search
@@ -38,4 +45,4 @@ const mapStateToProps = state => ({
     img: state.searchForm.img
 })
 const mapDispatchToProps = dispatch => bindActionCreators({handleInputChange}, dispatch)
-export default connect(mapStateToProps, mapDispatchToProps)(SearchForm)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchForm))

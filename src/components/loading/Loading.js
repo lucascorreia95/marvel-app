@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './Loading.css'
+
 import loading from '../../assets/img/loading-img.gif'
 
 class Loading extends Component {
