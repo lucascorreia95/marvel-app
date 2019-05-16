@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "5e090d9259f65747ff27",
+    "revision": "2bc603cb72cc1458cf03",
     "url": "/marvel-app/static/css/main.93966222.chunk.css"
   },
   {
-    "revision": "5e090d9259f65747ff27",
-    "url": "/marvel-app/static/js/main.5e090d92.chunk.js"
+    "revision": "2bc603cb72cc1458cf03",
+    "url": "/marvel-app/static/js/main.2bc603cb.chunk.js"
   },
   {
     "revision": "4e342df3cb995d4d75eb",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/marvel-app/static/media/bg-header.1d1ae4b6.jpg"
   },
   {
-    "revision": "4b39e1ccd4bc4d7324b92250c9944298",
+    "revision": "f67ac69b0ed2c5a88aa3a9dfcdaf7c0e",
     "url": "/marvel-app/index.html"
   }
 ];
